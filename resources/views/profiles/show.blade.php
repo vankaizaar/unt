@@ -34,7 +34,7 @@ width: 100%;
                             <div class="col-md-6">
                                 <p class="text-uppercase"><strong>Basic info</strong></p>
                                 <p>{{ $user->first_name }}  {{ $user->last_name }} <i>({{ $user->name}})</i><br />
-                                @if ($user->profile)
+                                @if ($user->profile->dob)
                                     {{$user->profile->dob->diffForHumans(null,True)}} <br />
                                     @endif
                                 </p>
