@@ -1,0 +1,98 @@
+html {
+  overflow-y: scroll;
+}
+
+@masongram-image-padding: 2px;
+
+.masongram-container {
+  margin: @masongram-image-padding;
+
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .masongram-image-sizer,
+  .masongram-image-container {
+    width: 100%;
+    &.masongram-image-size-low_resolution {
+      .masongram-media-width (320px, 2);
+      .masongram-media-width (640px, 3);
+      .masongram-media-width (960px, 4);
+      .masongram-media-width (1280px, 5);
+      .masongram-media-width (1600px, 6);
+      .masongram-media-width (1920px, 7);
+      .masongram-media-width (2240px, 8);
+      .masongram-media-width (2560px, 9);
+      .masongram-media-width (2880px, 10);
+    }
+    &.masongram-image-size-standard_resolution {
+      .masongram-media-width (640px, 2);
+      .masongram-media-width (1280px, 3);
+      .masongram-media-width (1920px, 4);
+      .masongram-media-width (2560px, 5);
+      .masongram-media-width (3200px, 7);
+    }
+  }
+
+  .masongram-image-container {
+    padding: @masongram-image-padding;
+    clear: left;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+
+    .masongram-image {
+      width: 100%;
+      height: auto;
+    }
+
+    @masongram-caption-padding: 10px;
+
+    .masongram-image-caption-container {
+      display: flex;
+      align-items: center;
+      width: ~"calc(100% - (@{masongram-image-padding}*2))";
+      height: ~"calc(100% - (@{masongram-image-padding}*2))";
+      position: absolute;
+      padding: @masongram-caption-padding @masongram-caption-padding*2;
+      top: @masongram-image-padding;
+      left: -100%;
+      background: rgba(0, 0, 0, 0.5);
+      transition: left 0s .3s, opacity .3s .3s;
+      opacity: 0;
+
+      .masongram-image-caption {
+        width: 100%;
+      }
+
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      .masongram-image-caption-container {
+        left: @masongram-image-padding;
+        opacity: .9;
+      }
+    }
+
+  }
+
+}
+
+.masongram-media-width(@min-width, @count) {
+  @media (min-width: (@min-width+1)) {
+    width: unit(floor(10000/@count)/100, %);
+  }
+}
+
+*[data-if="NO_DATA"] {
+  display: none !important;
+}

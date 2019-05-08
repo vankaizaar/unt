@@ -1,0 +1,39 @@
+{
+  "name": "masongram",
+  "authors": [
+    "Mladen Plavsic <mladen.plavsic@gmail.com>"
+  ],
+  "description": "JavaScript library for showing photos from Instagram using API, layout using Masonry, with infiniteload",
+  "main": [
+    "dist/masongram.js",
+    "dist/masongram.css"
+  ],
+  "keywords": [
+    "instagram",
+    "masonry",
+    "lightbox",
+    "infinite",
+    "scroll",
+    "api"
+  ],
+  "license": "MIT",
+  "homepage": "https://mladenplavsic.github.io/masongram/",
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules",
+    "docs",
+    "src",
+    ".gitignore",
+    "bower.json",
+    "gulpfile.js",
+    "LICENSE.md",
+    "package.json"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.4",
+    "masonry": "^4.1.1",
+    "imagesloaded": "images-loaded#^4.1.1",
+    "jquery-infinite-scroll": "infinite-scroll#^2.1.0"
+  }
+}
